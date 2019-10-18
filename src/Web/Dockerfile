@@ -24,4 +24,8 @@ COPY --from=build /app/src/Web/out ./
 # Optional: Set this here if not setting it from docker-compose.yml
 ENV ASPNETCORE_ENVIRONMENT Development
 
+# If deploying in a cloud, you likely won't have root access and thus can't bind to a low port 
+EXPOSE 5106
+ENV ASPNETCORE_URLS=http://*:5106
+
 ENTRYPOINT ["dotnet", "Web.dll"]
