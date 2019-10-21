@@ -14,5 +14,5 @@ capture:
     cleanCommands:
     - shell: [dotnet, clean]
     buildCommands:
-    - shell: [dotnet, build]
+    - shell: [dotnet, publish, -c, Release, -o, out]
     
