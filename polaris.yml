@@ -1,0 +1,18 @@
+version: "1"
+serverUrl: https://sipse.polaris.synopsys.com
+install:
+  coverity:
+    version: latest
+project:
+  name: ${scm.git.repo}
+  branch: ${scm.git.branch}
+  revision:
+    name: ${scm.git.commit}
+    date: ${scm.git.commit.date}
+capture:
+  build:
+    cleanCommands:
+    - shell: [dotnet, clean]
+    buildCommands:
+    - shell: [dotnet, build]
+    
