@@ -14,5 +14,5 @@ capture:
     cleanCommands:
     - shell: [dotnet, clean, eShopOnWeb.sln]
     buildCommands:
-    - shell: [dotnet, build, eShopOnWeb.sln, -c, Release, -o, out]
+    - shell: [dotnet, publish, eShopOnWeb.sln, -c, Release, -o, out]
  
